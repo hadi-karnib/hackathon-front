@@ -1,31 +1,15 @@
-name: Update Submodules on Dispatch
+name: Notify Main Project
 
-on:
-  repository_dispatch:
-    types: [update-submodules-event]
+on: push
 
 jobs:
-  update-submodules:
+  notify-main-project:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout the main repository
-      uses: actions/checkout@v2
+    - name: Repository Dispatch
+      uses: peter-evans/repository-dispatch@v1
       with:
-        fetch-depth: 0  # Ensures all history is fetched including tags
-
-    - name: Update submodules
-      run: |
-        git submodule sync --recursive
-        git submodule update --init --recursive --remote --merge
-        git submodule status
-
-    - name: Commit and Push changes
-      run: |
-        git config --global user.name "github-actions"
-        git config --global user.email "github-actions@github.com"
-        git add .
-        git status
-        git commit -m "Automatically updated submodules" || echo "No changes to commit"
-        git remote set-url origin https://${{ secrets.PAT }}@github.com/hadi-karnib/hackathon-front
-        git push || echo "Failed to push"
+        token: ${{ secrets.PAT }}
+        repository: hadi-karnib/hackathon-full
+        event-type: update-submodules-event
