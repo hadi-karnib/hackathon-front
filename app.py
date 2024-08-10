@@ -1,72 +1,64 @@
 import streamlit as st
+from streamlit_option_menu import option_menu
 
-# Set page configuration
-st.set_page_config(page_title="Custom Navbar", layout="wide")
+def streamlit_menu():
+    selected = option_menu(
+        menu_title=None, 
+        options=["Home", "Pre Launch", "Post Launch", "Our Story"],  
+        icons=["house", "rocket", "stars", "book"],  
+        menu_icon="cast", 
+        default_index=0,  
+        orientation="horizontal",
+        styles={
+            "container": {
+                "background": "linear-gradient(90deg, rgba(0,36,61,1) 0%, rgba(142,0,255,1) 35%, rgba(0,212,255,1) 100%)",
+                "border-radius": "5px",
+                "display": "flex",
+                "justify-content": "center",
+                "align-items": "space-between",
+                "height": "50px" 
+            },
+            "icon": {
+                "color": "white"
+            },
+            "nav-link": {
+                "background": "none",
+                "border": "none",
+                "color": "white",
+                "text-decoration": "none",
+                "padding": "10px 15px",  
+                "font-weight": "500",
+                "font-size": "16px",  
+                "cursor": "pointer",
+                "white-space": "nowrap"  
+            },
+            "nav-link-hover": {
+                "color": "cyan",
+                "border-bottom": "3px solid cyan"
+            },
+            "nav-link-selected": {
+                "color": "#00f4ff",
+                "border-bottom": "3px solid #00f4ff"
+            }
+        }
+    )
+    return selected
 
-# Custom CSS for styling
-st.markdown("""
-    <style>
-    /* Navbar container */
-    .navbar {
-        background: linear-gradient(90deg, rgba(0,36,61,1) 0%, rgba(142,0,255,1) 35%, rgba(0,212,255,1) 100%);
-        padding: 10px 20px;
-        border-radius: 5px;
-    }
-    
-    /* Navbar items */
-    .navbar a {
-        color: white;
-        text-decoration: none;
-        padding: 14px 20px;
-        font-weight: 500;
-        font-size: 18px;
-    }
-    
-    /* Navbar item hover effect */
-    .navbar a:hover {
-        color: cyan;
-        border-bottom: 3px solid cyan;
-    }
+def main():
+    selected = streamlit_menu()
 
-    /* Active link styling */
-    .navbar a.active {
-        color: #00f4ff;
-        border-bottom: 3px solid #00f4ff;
-    }
+    if selected == "Home":
+        from pages.home import home_page
+        home_page()
+    elif selected == "Pre Launch":
+        from pages.pre_launch import pre_launch_page
+        pre_launch_page()
+    elif selected == "Post Launch":
+        from pages.post_launch import post_launch_page
+        post_launch_page()
+    elif selected == "Our Story":
+        from pages.our_story import our_story_page
+        our_story_page()
 
-    /* Center the navbar items */
-    .navbar {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    
-    </style>
-    """, unsafe_allow_html=True)
-
-# Define the navigation menu
-selected_page = st.sidebar.selectbox("Navigation", ["Home", "Pre Launch", "Post Launch", "Our Story"])
-
-# HTML code for the navbar
-st.markdown(f"""
-    <div class="navbar">
-        <a href="#home" class="{ 'active' if selected_page == 'Home' else ''}">Home</a>
-        <a href="#pre-launch" class="{ 'active' if selected_page == 'Pre Launch' else ''}">Pre Launch</a>
-        <a href="#post-launch" class="{ 'active' if selected_page == 'Post Launch' else ''}">Post Launch</a>
-        <a href="#our-story" class="{ 'active' if selected_page == 'Our Story' else ''}">Our Story</a>
-    </div>
-    """, unsafe_allow_html=True)
-
-# Page content based on the selection
-if selected_page == "Home":
-    st.title("Welcome to Home Page")
-    st.write("This is the Home page.")
-elif selected_page == "Pre Launch":
-    st.title("Pre Launch")
-    st.write("Details about the Pre Launch phase.")
-elif selected_page == "Post Launch":
-    st.title("Post Launch")
-    st.write("Details about the Post Launch phase.")
-elif selected_page == "Our Story":
-    st.title("Our Story")
-    st.write("Here is our story...")
+if __name__ == "__main__":
+    main()
