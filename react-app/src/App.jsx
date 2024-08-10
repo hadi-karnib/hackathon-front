@@ -36,11 +36,11 @@
 
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import Home from './pages/Home';
-import PreLaunch from './pages/PreLaunch';
-import PostLaunch from './pages/PostLaunch';
-import OurStory from './pages/OurStory';
+import Navbar from './components/navbar/Navbar';
+import Home from './pages/Home/Home';
+import PreLaunch from './pages/PreLaunch/PreLaunch';
+import PostLaunch from './pages/PostLaunch/PostLaunch';
+import OurStory from './pages/OurStory/OurStory';
 
 function App() {
   return (
