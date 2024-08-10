@@ -1,0 +1,123 @@
+.footer-container {
+  background-color: #1e004d;
+  background-image: url("./footerBG.jpeg");
+  background-size: cover; /* Ensure the image covers the footer */
+  background-position: center; /* Center the background image */
+  background-repeat: no-repeat; /* Prevent the image from repeating */
+  padding: 20px 50px;
+  color: #ffffff;
+  text-align: center;
+  position: relative;
+  max-width: 100vw;
+  border-top: 1px solid #9c27b0;
+  margin-top: 20px;
+}
+
+.content-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+  margin-top: 20px;
+}
+
+.logo {
+  width: 150px;
+  margin-right: 10px;
+}
+
+.company-name {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ff1493;
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+  margin-top: 110px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 16px;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+  color: #27e2fb; /* Optional: change color on hover */
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.deployed-button {
+  padding: 10px 20px;
+  border: 2px solid #27e2fb; /* Border with color */
+  background-color: transparent; /* Make the background transparent */
+  color: #27e2fb; /* Text color matching the border */
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold; /* Optional: make text bold for better visibility */
+}
+
+.deployed-button:hover {
+  background-color: rgba(
+    39,
+    226,
+    251,
+    0.1
+  ); /* Slight background color on hover */
+}
+
+.undeployed-button {
+  padding: 10px 20px;
+  border: 2px solid #27e2fb; /* Border with color */
+  background-color: transparent; /* Make the background transparent */
+  color: #27e2fb; /* Text color matching the border */
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold; /* Optional: make text bold for better visibility */
+}
+.undeployed-button:hover {
+  background-color: rgba(
+    39,
+    226,
+    251,
+    0.1
+  ); /* Slight background color on hover */
+}
+
+.footer-bottom {
+  border-top: 1px solid #9c27b0;
+  padding-top: 10px;
+  font-size: 14px;
+  color: #cccccc;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 10px;
+}
+
+.privacy-link {
+  text-decoration: none;
+  color: white;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.privacy-link:hover {
+  text-decoration: underline;
+  color: #27e2fb; /* Optional: change color on hover */
+}
