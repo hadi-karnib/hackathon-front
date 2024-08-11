@@ -1,8 +1,10 @@
 import React from 'react';
 import './ourstory.css'
+import Navbar from '../../components/navbar/Navbar';
 function OurStory() {
   return(
     <>
+    <Navbar backgroundColor={"#FFF9F9"} linkColor={"black"} />
     <div className="first-part">
       <div className="main-text">
         <p id='main-text'>Predict with Confidence, <br />Launch with Success!</p>
