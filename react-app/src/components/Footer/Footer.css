@@ -10,7 +10,6 @@
   position: relative;
   max-width: 100vw;
   border-top: 1px solid #9c27b0;
-  margin-top: 20px;
 }
 
 .content-container {
@@ -101,7 +100,7 @@
 }
 
 .footer-bottom {
-  border-top: 1px solid #9c27b0;
+  border-top: 1px solid white;
   padding-top: 10px;
   font-size: 14px;
   color: #cccccc;
@@ -120,4 +119,13 @@
 .privacy-link:hover {
   text-decoration: underline;
   color: #27e2fb; /* Optional: change color on hover */
+}
+
+.copyright-text {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300; /* Light typeface */
+  font-size: 19px;
+  color: #ffffff; /* Ensures the text is white to match the footer theme */
+  margin-top: 20px; /* Adds some space above the copyright text */
+  text-align: center; /* Centers the text */
 }

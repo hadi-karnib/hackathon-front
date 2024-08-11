@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Clash+Display:wght@500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Clash+Display:wght@500;600;700&display=swap");
 
 .market-insights-container {
   display: flex;
@@ -6,7 +6,7 @@
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-image: url('background.png');
+  background-image: url("background.png");
   background-size: cover;
   background-position: center;
   position: relative;
@@ -15,7 +15,7 @@
 }
 
 .market-insights-container::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -29,7 +29,7 @@
   text-align: center;
   z-index: 2;
   color: white;
-  font-family: 'Clash Display', sans-serif;
+  font-family: "Clash Display", sans-serif;
   margin-bottom: 30px;
 }
 
@@ -53,7 +53,7 @@
   display: flex;
   align-items: center;
   font-weight: 600;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .market-insights-form {
@@ -62,7 +62,7 @@
   border-radius: 15px;
   width: 55%;
   color: white;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   overflow-y: auto;
 }
 
@@ -83,10 +83,11 @@ label {
   color: white;
   font-size: 0.9rem;
   margin-bottom: 5px;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
-input, select {
+input,
+select {
   padding: 10px;
   border-radius: 5px;
   border: none;
@@ -96,7 +97,8 @@ input, select {
   font-size: 1rem;
 }
 
-button {
+.show-results,
+.cancel {
   padding: 5px 0px;
   border-radius: 40px;
   border: none;
@@ -139,7 +141,8 @@ button {
     width: 90%;
   }
 
-  .market-insights-text, .market-insights-form {
+  .market-insights-text,
+  .market-insights-form {
     width: 100%;
     text-align: center;
     padding: 10px;
@@ -176,11 +179,14 @@ button {
     gap: 5px;
   }
 
-  .input, select, option{
+  input,
+  select,
+  option {
     font-size: 0.9rem;
   }
 
-  button {
+  .show-results,
+  .cancel {
     width: 100%;
     padding: 10px 0;
   }
@@ -188,11 +194,13 @@ button {
   .cancel {
     margin-left: 0;
   }
-
 }
 
 label {
-    font-weight: bold;
-    margin-bottom: -5px;
-    margin-top: 5px;
+  font-weight: bold;
+  margin-bottom: -5px;
+  margin-top: 5px;
+}
+::-webkit-scrollbar {
+  display: none;
 }
