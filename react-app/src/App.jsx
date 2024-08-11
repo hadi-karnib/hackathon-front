@@ -41,6 +41,7 @@ import Home from "./pages/Home/Home";
 import PreLaunch from "./pages/PreLaunch/PreLaunch";
 import PostLaunch from "./pages/PostLaunch/PostLaunch";
 import OurStory from "./pages/OurStory/OurStory";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
@@ -54,6 +55,7 @@ function App() {
           <Route path="/our-story" element={<OurStory />} />
         </Routes>
       </Router>
+      <Footer />
     </>
   );
 }

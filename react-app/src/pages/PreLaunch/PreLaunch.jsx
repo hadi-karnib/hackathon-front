@@ -61,7 +61,6 @@ const PreLaunch = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </div>
   );
 };
