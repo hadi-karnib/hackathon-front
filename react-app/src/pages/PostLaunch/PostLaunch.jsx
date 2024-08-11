@@ -1,8 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import "./postLaunch.css";
 import Navbar from '../../components/navbar/Navbar';
+import StreamlitEmbed from "../../components/streamlitEmbed/StreamlitEmbed"
 
 function PostLaunch() {
+  const [showResults, setShowResults] = useState(false);
+  const data ="?installation_category=high&installation_number=5000"
+
+  const handleShowResults = () => {
+    setShowResults(!showResults);
+  };
+
   return (
     <div>
       <Navbar backgroundColor={"#FFF9F9"} linkColor={"black"} />
@@ -65,10 +73,22 @@ function PostLaunch() {
             </select>
           </div>
           <div className='buttons'>
-            <button type="submit" className="post-launch-form-button post-launch-form-button-primary">Show Result</button>
+            <button
+              type="button"
+              className="post-launch-form-button post-launch-form-button-primary"
+              onClick={handleShowResults}
+            >
+              {showResults ? 'Hide Result' : 'Show Result'}
+            </button>
             <button type="button" className="post-launch-form-button post-launch-form-button-secondary">Cancel</button>
           </div>
         </form>
+        {showResults && (
+          <div className="results-container">
+            <h2 className="post-launch-form-heading">Here's your app insights</h2>
+            <StreamlitEmbed data={data} />
+          </div>
+        )}
       </div>
     </div>
   );

@@ -9,7 +9,7 @@ const StreamlitEmbed = ({ data }) => {
     <div>
       <iframe
         src={streamlitUrl}
-        style={{ width: "100%", height: "70vh", border: "none" }}
+        style={{ width: "90vw", height: "70vh", border: "none",margin: "auto", display: "block" }}
         title="Streamlit"
         onError={(e) => console.error("Error loading Streamlit app:", e)}
       ></iframe>
