@@ -1,0 +1,85 @@
+.post-launch-form-container {
+    padding: 1.5rem;
+    background-color: #f8f9fa;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    width: 100vw;
+}
+
+.post-launch-form-heading {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #BF1ADD;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.post-launch-form-paragraph {
+    color: black;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.post-launch-form {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2rem;
+    width: 95vw;
+}
+
+@media (min-width: 768px) {
+    .post-launch-form {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.post-launch-form-input,
+.post-launch-form-select {
+    border: 1px solid #d1d5db;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    width: 100%;
+}
+
+.post-launch-form-label {
+    display: block;
+    padding-bottom: 10px;
+    color: #3D10F9;
+}
+
+.post-launch-form-button {
+    border-radius: 1rem;
+    padding: 0.5rem 1rem;
+}
+
+.post-launch-form-button-primary {
+    background-color: #3D10F9;
+    color: white;
+}
+
+.post-launch-form-button-primary:hover {
+    background-color: rgba(191, 26, 221, 0.8);
+}
+
+.post-launch-form-button-secondary {
+    background-color: #6c757d;
+    color: white;
+}
+
+.post-launch-form-button-secondary:hover {
+    background-color: rgba(108, 117, 125, 0.8);
+}
+
+.post-launch-form-buttons-container {
+    grid-column: span 3;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.buttons{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}

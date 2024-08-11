@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
 
-const Navbar = ({ backgroundColor }) => {
+const Navbar = ({ backgroundColor, linkColor }) => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -19,11 +19,11 @@ const Navbar = ({ backgroundColor }) => {
         <span className="bar"></span>
         <span className="bar"></span>
       </div>
-      <ul className={`links ${menuOpen ? 'open' : ''}`}>
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/pre-launch">Pre Launch</Link></li>
-        <li><Link to="/post-launch">Post Launch</Link></li>
-        <li><Link to="/our-story">Our Story</Link></li>
+      <ul className={`links ${menuOpen ? 'open' : ''}`} style={{ '--link-color': linkColor }}>
+        <li><Link to="/" style={{ color: linkColor }}>Home</Link></li>
+        <li><Link to="/pre-launch" style={{ color: linkColor }}>Pre Launch</Link></li>
+        <li><Link to="/post-launch" style={{ color: linkColor }}>Post Launch</Link></li>
+        <li><Link to="/our-story" style={{ color: linkColor }}>Our Story</Link></li>
       </ul>
     </nav>
   );

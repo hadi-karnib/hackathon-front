@@ -45,11 +45,12 @@
     margin: 0;
   }
   
-  .navbar .links a {
-    color: #ffffff;
-    text-decoration: none;
-    transition: color 0.3s ease, text-decoration 0.3s ease;
-  }
+  
+.navbar .links a {
+  color: var(--link-color,#ffffff); /* Use CSS variable with default color */
+  text-decoration: none;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+}
   
   .navbar .links a:hover {
     color: #add8e6; /* Light blue color */
