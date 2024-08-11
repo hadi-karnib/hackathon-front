@@ -30,10 +30,16 @@ import "./Home.css";
 import Variant1 from "../../Assets/Variant1.svg";
 import Variant2 from "../../Assets/Variant2.svg";
 import Variant3 from "../../Assets/Variant3.svg";
+import React from 'react';
+import Navbar from '../../components/navbar/Navbar';
 
 function Home() {
   return (
     <div className="home">
+       <div>
+    <Navbar backgroundColor="linear-gradient(to right, #a855f7, #3b82f6)" logoSrc="http://localhost:3000/images/LOGO-01.png"/>
+  <h1>Home Page</h1> 
+  </div>
       <div className="content">
         <h1>Bring every <span className="highlight">idea to life just like magic!</span></h1>
         <p>Welcome to AppSight, your AI-driven tool for predicting app success! We provide data-driven insights to help developers launch with confidence. Join us to redefine app development with accurate predictions and powerful insights.</p>
@@ -51,5 +57,4 @@ function Home() {
     </div>
   );
 }
-
 export default Home;

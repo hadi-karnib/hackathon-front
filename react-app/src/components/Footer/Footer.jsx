@@ -28,9 +28,9 @@ const Footer = () => {
         </div>
       </div>
       <div className="footer-bottom">
-        <span>
-          Copyright © 2024 Appsight. All rights reserved.|Privacy Policy
-        </span>
+        <p className="copyright-text">
+          © 2024 Your Company Name. All rights reserved.|Privacy Policy
+        </p>
       </div>
     </div>
   );

@@ -1,16 +1,15 @@
 .footer-container {
   background-color: #1e004d;
   background-image: url("./footerBG.jpeg");
-  background-size: cover; /* Ensure the image covers the footer */
-  background-position: center; /* Center the background image */
-  background-repeat: no-repeat; /* Prevent the image from repeating */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   padding: 20px 50px;
   color: #ffffff;
   text-align: center;
   position: relative;
   max-width: 100vw;
   border-top: 1px solid #9c27b0;
-  margin-top: 20px;
 }
 
 .content-container {
@@ -18,13 +17,13 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 10px;
+  flex-wrap: wrap; /* Allows items to wrap to the next line on smaller screens */
 }
 
 .logo-container {
   display: flex;
   align-items: center;
-  margin-bottom: 40px;
-  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .logo {
@@ -41,7 +40,9 @@
 .nav-links {
   display: flex;
   gap: 30px;
-  margin-top: 110px;
+  margin-top: 80px;
+  flex-wrap: wrap; /* Allows links to wrap to the next line on smaller screens */
+  justify-content: center; /* Centers the navigation links */
 }
 
 .nav-link {
@@ -53,7 +54,7 @@
 
 .nav-link:hover {
   text-decoration: underline;
-  color: #27e2fb; /* Optional: change color on hover */
+  color: #27e2fb;
 }
 
 .button-container {
@@ -61,54 +62,36 @@
   flex-direction: column;
   gap: 10px;
   margin-top: 20px;
+  align-items: center;
 }
 
-.deployed-button {
-  padding: 10px 20px;
-  border: 2px solid #27e2fb; /* Border with color */
-  background-color: transparent; /* Make the background transparent */
-  color: #27e2fb; /* Text color matching the border */
-  border-radius: 20px;
-  cursor: pointer;
-  font-weight: bold; /* Optional: make text bold for better visibility */
-}
-
-.deployed-button:hover {
-  background-color: rgba(
-    39,
-    226,
-    251,
-    0.1
-  ); /* Slight background color on hover */
-}
-
+.deployed-button,
 .undeployed-button {
   padding: 10px 20px;
-  border: 2px solid #27e2fb; /* Border with color */
-  background-color: transparent; /* Make the background transparent */
-  color: #27e2fb; /* Text color matching the border */
+  border: 2px solid #27e2fb;
+  background-color: transparent;
+  color: #27e2fb;
   border-radius: 20px;
   cursor: pointer;
-  font-weight: bold; /* Optional: make text bold for better visibility */
+  font-weight: bold;
 }
+
+.deployed-button:hover,
 .undeployed-button:hover {
-  background-color: rgba(
-    39,
-    226,
-    251,
-    0.1
-  ); /* Slight background color on hover */
+  background-color: rgba(39, 226, 251, 0.1);
 }
 
 .footer-bottom {
-  border-top: 1px solid #9c27b0;
+  border-top: 1px solid white;
   padding-top: 10px;
   font-size: 14px;
   color: #cccccc;
   display: flex;
-  justify-content: start;
+  justify-content: flex;
   align-items: center;
+  flex-direction: column;
   gap: 10px;
+  margin-top: 20px;
 }
 
 .privacy-link {
@@ -119,5 +102,56 @@
 
 .privacy-link:hover {
   text-decoration: underline;
-  color: #27e2fb; /* Optional: change color on hover */
+  color: #27e2fb;
+}
+
+.copyright-text {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-size: 19px;
+  color: #ffffff;
+  text-align: center;
+  margin: 10px 0;
+  align-self: flex-start;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .content-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .logo-container {
+    margin-bottom: 20px;
+  }
+
+  .nav-links {
+    margin-top: 20px;
+  }
+
+  .button-container {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-link {
+    font-size: 14px;
+    margin: 5px 0;
+  }
+
+  .logo {
+    width: 120px;
+  }
+
+  .deployed-button,
+  .undeployed-button {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  .footer-bottom {
+    font-size: 12px;
+  }
 }
