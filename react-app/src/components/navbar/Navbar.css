@@ -1,11 +1,11 @@
 .navbar {
-    background-image: linear-gradient(to right, #a855f7, #3b82f6);
-    padding: 1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-  }
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
   
   .navbar .logo {
     font-size: 1.25rem;
@@ -48,7 +48,14 @@
   .navbar .links a {
     color: #ffffff;
     text-decoration: none;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
   }
+  
+  .navbar .links a:hover {
+    color: #add8e6; /* Light blue color */
+    text-decoration: underline;
+  }
+  
   
   @media (max-width: 768px) {
     .navbar .burger {
