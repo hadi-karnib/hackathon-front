@@ -4,18 +4,40 @@ import plotly.graph_objs as go
 # Set page config to wide mode
 st.set_page_config(layout="wide")
 
-# Inject custom CSS to set the background color to white
+# Inject custom CSS to set the background color to white and hide unwanted elements
 st.markdown(
     """
     <style>
     body {
         background-color: white;
+        margin: 0;
     }
     .main {
         background-color: white;
     }
     .reportview-container {
         background-color: white;
+    }
+    header {
+        display: none;  /* Hide the header */
+    }
+    .css-1k4b6nd {
+        display: none;  /* Hide the deploy button and top right menu if it has this class */
+    }
+    .css-1f3dpw3 {
+        display: none;  /* Hide the top right menu if it has this class */
+    }
+    .css-1crf0be {
+        display: none;  /* Hide the top right menu if it has this class */
+    }
+    .css-1k62w1h {
+        display: none;  /* Hide the top right menu if it has this class */
+    }
+    .css-1f84yl1 {
+        display: none;  /* Hide the top right menu if it has this class */
+    }
+    .css-1a8k2hu {
+        display: none;  /* Hide the top right menu if it has this class */
     }
     </style>
     """,
@@ -59,7 +81,7 @@ if params:
                 category_labels = ['Mid']  # Only 'Mid' is visible
             elif category == 'high':
                 category_color = '#3d10f9'  # Red
-                category_proportion = [0.90,0.2]  # 100% for 'High'
+                category_proportion = [0.90, 0.10]  # 90% for 'High'
                 category_labels = ['High']  # Only 'High' is visible
             else:
                 st.error("Invalid category provided. Please use 'low', 'mid', or 'high'.")
