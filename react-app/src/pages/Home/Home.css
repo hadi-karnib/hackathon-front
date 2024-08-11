@@ -1,0 +1,109 @@
+/* Reset and Global Styles */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden; /* Prevent overall page scrolling */
+    box-sizing: border-box;
+}
+
+.home {
+    background-image: url('../../Assets/background.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: space-between; /* Space out the left and right sides */
+    align-items: center;
+    color: white;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+    overflow-y: hidden;
+    padding: 0 50px; /* Optional padding to add some spacing */
+}
+
+.content {
+    text-align: left;
+    max-width: 50%; /* Limit the content to half of the screen */
+    flex: 1; /* Take up the left half of the screen */
+}
+
+.content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    font-family: 'Clash Display', sans-serif;
+}
+
+.content .highlight {
+    color: #bf1add; /* Adjust highlight color as needed */
+}
+
+.content p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.buttons {
+    margin-top: 30px;
+}
+
+.buttons .deployed, .buttons .undeployed {
+    background: transparent;
+    border: 2px solid white;
+    padding: 10px 20px;
+    margin-right: 20px;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+
+}
+
+.buttons .deployed:hover, .buttons .undeployed:hover {
+    background: white;
+    color: #000428; /* Match with the background gradient */
+}
+
+.right-shape {
+    position: absolute;
+    bottom: 20px; /* Adjust distance from the bottom */
+    right: 20px; /* Adjust distance from the right */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px; /* Increase the size */
+    width: 200px; /* Increase the size */
+    position: relative;
+}
+
+.variant {
+    position: absolute;
+    width: 150vw; 
+    height: 150vh; 
+    opacity: 0;
+    animation: dissolveEffect 9s infinite; 
+    padding-top: 450px;
+    padding-right: 230px;
+}
+
+.variant1 {
+    animation-delay: 0s;
+}
+
+.variant2 {
+    animation-delay: 3s; /* Starts after variant1 completes its cycle */
+}
+
+.variant3 {
+    animation-delay: 6s; /* Starts after variant2 completes its cycle */
+}
+
+@keyframes dissolveEffect {
+    0% { opacity: 0; filter: blur(10px); }
+    11.1% { opacity: 1; filter: blur(0); } /* Dissolve in */
+    44.4% { opacity: 1; filter: blur(0); } /* Stay visible */
+    55.5% { opacity: 0; filter: blur(10px); } /* Dissolve out */
+    100% { opacity: 0; filter: blur(10px); } /* Hidden */
+}
