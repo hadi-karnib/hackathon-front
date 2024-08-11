@@ -52,7 +52,7 @@ const PreLaunch = () => {
             </p>
           </div>
           <div className="market-insights-form">
-            <form onSubmit={handleSubmit}>
+            <form className="model1-form" onSubmit={handleSubmit}>
               <div className="form-container">
                 <div className="form-group">
                   <label>App Name</label>
