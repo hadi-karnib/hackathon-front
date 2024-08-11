@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./PreLaunch.css";
 import StreamlitEmbed from "../../components/streamlitEmbed/StreamlitEmbed";
+import Navbar from "../../components/navbar/Navbar";
 
 const PreLaunch = () => {
   const [formData, setFormData] = useState({
@@ -39,6 +40,7 @@ const PreLaunch = () => {
 
   return (
     <div className="mainprelaunch">
+            <Navbar backgroundColor={"#FFF9F9"} linkColor={"black"} />
       <div className="market-insights-container">
         <div className="title-section">
           <h2>Get Your Market Insights!</h2>
