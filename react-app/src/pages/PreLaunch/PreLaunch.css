@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Clash+Display:wght@500;600;700&family=Poppins:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Clash+Display:wght@500;600;700&display=swap');
 
 .market-insights-container {
   display: flex;
@@ -52,6 +52,7 @@
   padding: 20px;
   display: flex;
   align-items: center;
+  font-weight: 600;
   font-family: 'Poppins', sans-serif;
 }
 
@@ -131,8 +132,6 @@ button {
   font-size: 1.2rem;
 }
 
-/* Responsive Styles */
-
 @media (max-width: 768px) {
   .market-insights-content {
     flex-direction: column;
@@ -143,6 +142,7 @@ button {
   .market-insights-text, .market-insights-form {
     width: 100%;
     text-align: center;
+    padding: 10px;
   }
 
   .form-container {
@@ -176,7 +176,7 @@ button {
     gap: 5px;
   }
 
-  .input, .select {
+  .input, select, option{
     font-size: 0.9rem;
   }
 
@@ -188,4 +188,11 @@ button {
   .cancel {
     margin-left: 0;
   }
+
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: -5px;
+    margin-top: 5px;
 }

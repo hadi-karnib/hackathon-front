@@ -43,10 +43,7 @@ const PreLaunch = () => {
                 {/* Add audiences here */}
               </select>
               <label>Android Version</label>
-              <select>
-                <option value="">Select Version</option>
-                {/* Add audiences here */}
-              </select>
+              <input type="text" />
               <label>Genre</label>
               <select>
                 <option value="">Select Genre</option>
