@@ -1,3 +1,17 @@
+@font-face {
+    font-family: 'Clash Display';
+    src: url('../../fonts/ClashDisplay-Regular.otf') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Clash Display';
+    src: url('../../fonts/ClashDisplay-Bold.otf') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+}
+
 .post-launch-form-container {
     padding: 1.5rem;
     background-color: #f8f9fa;
@@ -8,8 +22,9 @@
 }
 
 .post-launch-form-heading {
-    font-size: 1.5rem;
+    font-size: 40px;
     font-weight: bold;
+    font-family: "Clash Display", sans-serif;
     color: #BF1ADD;
     text-align: center;
     margin-bottom: 1rem;
@@ -18,6 +33,9 @@
 .post-launch-form-paragraph {
     color: black;
     text-align: center;
+    font-family: "Clash Display", sans-serif;
+    font-weight: 'semibold';
+    font-size: 25px;
     margin-bottom: 1.5rem;
 }
 
@@ -25,7 +43,9 @@
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     gap: 2rem;
-    width: 95vw;
+    margin-left: 90px;
+    margin-right: 90px;
+    width: 80vw;
     margin-bottom: 20px;
 }
 
@@ -44,10 +64,15 @@
 }
 
 .post-launch-form-label {
-    font: poppins;
+    font-family: 'poppins', sans-serif;
+    text-decoration:"bold";
+    font-size: 18px ;
     display: block;
     padding-bottom: 10px;
     color: #3D10F9;
+}
+.post-launch-form-input-placeholder {
+    color: black;
 }
 
 .post-launch-form-button {
@@ -57,6 +82,8 @@
 
 .post-launch-form-button-primary {
     background-color: #3D10F9;
+    width: 40%;
+    border: 0ch;
     color: white;
 }
 
@@ -65,13 +92,11 @@
 }
 
 .post-launch-form-button-secondary {
-    background-color: #6c757d;
-    color: white;
+    background-color: transparent  ;
+    border: 0ch;
+    color:  #3D10F9;
 }
 
-.post-launch-form-button-secondary:hover {
-    background-color: rgba(108, 117, 125, 0.8);
-}
 
 .post-launch-form-buttons-container {
     grid-column: span 3;
@@ -83,5 +108,5 @@
     display: flex;
     align-items: center;
     gap: 1rem;
-    margin-top: 1rem;
+    margin-top: 2rem;
 }
