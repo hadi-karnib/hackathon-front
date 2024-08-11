@@ -52,111 +52,107 @@ def get_url_params():
 # Get the URL parameters
 params = get_url_params()
 
-# Prepare data for visualization
+# Display raw data for debugging
 if params:
-    try:
-        # Extract and display parameters for debugging
-        category_list = params.get('installation_category', [])
-        number_list = params.get('installation_number', [])
-        
-        if category_list and number_list:
-            category = category_list
-            number_str = number_list
+    #st.write("Raw URL Parameters:")
+    #st.write(params)  # Display raw query parameters
 
-            # Validate and convert number
+    try:
+        # Extract parameters
+        category = params.get('installation_category', [''])
+        installation_number_str = params.get('installation_number', [''])
+        
+        #st.write(f"Category: {category}")
+        #st.write(f"Installation Number (raw): {installation_number_str}")
+        
+        if installation_number_str:
             try:
-                number = int(number_str)
+                installation_number = int(installation_number_str)
             except ValueError:
                 st.error("Invalid number format")
-                number = 0
+                installation_number = 0
 
             # Define colors and proportions based on category
-            if category == 'low':
-                category_color = '#27e2fb'  # Light blue
-                category_proportion = [0.25, 0.75]  # 25% for 'Low', 75% handled internally
-                category_labels = ['Low']  # Only 'Low' is visible
-            elif category == 'mid':
-                category_color = '#bf1add'  # Light yellow
-                category_proportion = [0.5, 0.5]  # 50% for 'Mid', 50% handled internally
-                category_labels = ['Mid']  # Only 'Mid' is visible
-            elif category == 'high':
-                category_color = '#3d10f9'  # Red
-                category_proportion = [0.90, 0.10]  # 90% for 'High'
-                category_labels = ['High']  # Only 'High' is visible
-            else:
-                st.error("Invalid category provided. Please use 'low', 'mid', or 'high'.")
-                category_color = '#e5e5e5'  # Gray for invalid
-                category_proportion = [0, 1]
-                category_labels = ['Invalid', 'Other']
+            category_data = {
+                'no': {'color': '#e5e5e5', 'proportion': [0, 1]},
+                'Very low': {'color': '#27e2fb', 'proportion': [0.05, 0.95]},
+                'Low': {'color': '#3d10f9', 'proportion': [0.25, 0.75]},
+                'Moderate': {'color': '#bf1add', 'proportion': [0.5, 0.5]},
+                'More than Moderate': {'color': '#ffcc00', 'proportion': [0.75, 0.25]},
+                'High': {'color': '#ff0000', 'proportion': [0.85, 0.15]},
+                'Very High': {'color': '#ff8800', 'proportion': [0.95, 0.05]},
+                'Top Notch': {'color': '#00ff00', 'proportion': [1, 0]}
+            }
+            
+            category_info = category_data.get(category, category_data['no'])
+            category_color = category_info['color']
+            category_proportion = category_info['proportion']
 
-            # Create a vertical bar chart for the category
+            # Create the first figure (installation category)
             fig1 = go.Figure()
 
-            # Add bars based on the proportions
-            for label, proportion in zip(category_labels, category_proportion):
-                fig1.add_trace(go.Bar(
-                    x=[label],
-                    y=[proportion * 100],  # Convert proportion to percentage
-                    name=label,
-                    marker_color=category_color if label == category_labels[0] else '#e5e5e5',
-                    text=[f'{proportion * 100:.1f}%'],
-                    textposition='inside',
-                    textfont_color='black'  # Change text color to black
-                ))
+            fig1.add_trace(go.Bar(
+                x=[category],
+                y=[category_proportion[0] * 100],  # Convert proportion to percentage
+                marker_color=category_color,
+                text=[f'{category_proportion[0] * 100:.1f}%'],
+                textposition='auto',  # Position the text inside the bar
+                textfont_color='black'  # Change text color to black
+            ))
 
             fig1.update_layout(
                 width=500,
                 height=500,
                 title='Installation Category',
-                title_font_color='black',  # Title color
+                title_font_color='black',
                 xaxis_title='Category',
-                xaxis_title_font_color='black',  # X-axis title color
+                xaxis_title_font_color='black',
                 yaxis_title='Percentage',
-                yaxis_title_font_color='black',  # Y-axis title color
+                yaxis_title_font_color='black',
                 xaxis=dict(
-                    tickvals=category_labels,
-                    ticktext=category_labels,
-                    tickfont_color='black'  # X-axis tick label color
+                    tickvals=[category],
+                    ticktext=[category],
+                    tickfont_color='black'
                 ),
                 yaxis=dict(
                     range=[0, 100],  # Percentage range from 0% to 100%
                     tickprefix='',
                     ticksuffix='%',
-                    tickfont_color='black'  # Y-axis tick label color
+                    tickfont_color='black'
                 ),
                 margin=dict(l=20, r=20, t=40, b=20),
                 plot_bgcolor='white',  # White background for the plot area
                 paper_bgcolor='white'  # White background for the entire figure
             )
 
-            # Create a vertical bar chart with a creative touch for the number of installations
+           # Create the second figure (number of installations)
             fig2 = go.Figure()
             fig2.add_trace(go.Bar(
                 x=['Installations'],  # Single category for the bar chart
-                y=[number / 1000],  # Convert to thousands
+                y=[installation_number],  # Display the actual number of installations
                 marker_color=category_color,  # Use the same color as the category
-                text=[f'{number / 1000:.0f}k'],  # Display the number on the bar
-                textposition='inside',
+                text=[f'{installation_number:,}'],  # Display the number with commas
+                textposition='auto',  # Position the text inside the bar
                 textfont_color='black'  # Change text color to black
             ))
             fig2.update_layout(
                 width=500,
                 height=500,
                 title='Number of Installations',
-                title_font_color='black',  # Title color
+                title_font_color='black',
                 xaxis_title='',  # No title for x-axis
-                yaxis_title='Installations (in thousands)',
-                yaxis_title_font_color='black',  # Y-axis title color
+                yaxis_title='Installations',
+                yaxis_title_font_color='black',
                 xaxis=dict(
-                    tickvals=['Installations'],  # Label for the x-axis
-                    ticktext=[''],  # Remove tick labels for a cleaner look
-                    tickfont_color='black'  # X-axis tick label color
+                    tickvals=['Installations'],
+                    ticktext=[''],
+                    tickfont_color='black'
                 ),
                 yaxis=dict(
-                    range=[0, number / 1000 * 1.1],  # Adjust range to fit the bar
-                    tickprefix='',  # Remove default suffix
-                    ticksuffix='k',  # Use 'k' for thousands
-                    tickfont_color='black'  # Y-axis tick label color
+                    range=[0, 10000000],  # Limit y-axis between 0 and 10,000,000
+                    tickprefix='',
+                    ticksuffix='',
+                    tickfont_color='black'
                 ),
                 margin=dict(l=20, r=20, t=40, b=20),
                 plot_bgcolor='white',  # White background for the plot area
@@ -171,7 +167,7 @@ if params:
                 st.plotly_chart(fig2, use_container_width=True)
 
         else:
-            st.write("Category or number not found in URL parameters")
+            st.write("Installation number not found in URL parameters")
 
     except ValueError as e:
         st.error(f"Error processing data: {e}")
