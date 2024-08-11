@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
 
-const Navbar = ({ backgroundColor, linkColor }) => {
+const Navbar = ({ backgroundColor, linkColor, logoSrc="http://localhost:3000/images/Logo-02.png"}) => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -12,7 +12,7 @@ const Navbar = ({ backgroundColor, linkColor }) => {
   return (
     <nav className="navbar" style={{ backgroundColor }}>
       <div className="logo">
-        <img src="http://localhost:3000/images/Logo-02.png" alt="App Sight Logo" className="mr-2" />
+        <img src={logoSrc} alt="App Sight Logo" className="mr-2" />
       </div>
       <div className="burger" onClick={toggleMenu}>
         <span className="bar"></span>
