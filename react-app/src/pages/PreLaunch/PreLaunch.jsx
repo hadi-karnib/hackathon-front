@@ -5,17 +5,17 @@ import Navbar from "../../components/navbar/Navbar";
 
 const PreLaunch = () => {
   const [formData, setFormData] = useState({
-    App: '',
-    Category: '',
-    Size_in_MB: '',
-    Type: '',
-    Price: '',
-    Content_Rating: '',
-    Genres: '',
-    Last_Updated: '',
-    Android_Ver: '',
+    App: 'kondara',
+    Category: 'events',
+    Size_in_MB: 55,
+    Type: 'free',
+    Price: 2,
+    Content_Rating: 'Adults',
+    Genres: 'Actions',
+    Last_Updated: '2024-08-10',
+    Android_Ver: '7.0',
   });
-  const [response, setResponse] = useState(null);
+  const [responseParams, setResponseParams] = useState(null);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -24,15 +24,18 @@ const PreLaunch = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch('http://localhost:8000/your-endpoint', {
+      const res = await fetch('http://localhost:8000/predict_decision_tree', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
+          'Content-Type': 'application/json', 
         },
         body: JSON.stringify(formData),
       });
       const result = await res.json();
-      setResponse(result); 
+
+      const params = `?installation_category=${result.Installs_category}&installation_number=${result.Installs}`;
+      setResponseParams(params);
+      console.log(params);
     } catch (error) {
       console.error('Error:', error);
     }
@@ -40,11 +43,11 @@ const PreLaunch = () => {
 
   return (
     <div className="mainprelaunch">
-            <Navbar backgroundColor={"#FFF9F9"} linkColor={"black"} />
+      <Navbar backgroundColor={"#FFF9F9"} linkColor={"black"} />
       <div className="market-insights-container">
         <div className="title-section">
           <h2>Get Your Market Insights!</h2>
-          <p>Please complete the contact form, to get the best outcome!</p>
+          <p>Please complete the contact form to get the best outcome!</p>
         </div>
         <div className="market-insights-content">
           <div className="market-insights-text">
@@ -116,12 +119,14 @@ const PreLaunch = () => {
                     {/* Add ratings here */}
                   </select>
                   <label>Genres</label>
-                  <input
-                    type="text"
+                  <select
                     name="Genres"
                     value={formData.Genres}
                     onChange={handleChange}
-                  />
+                  >
+                    <option value="">Select Type</option>
+                    {/* Add types here */}
+                  </select>
                   <label>Android Version</label>
                   <input
                     type="text"
@@ -136,13 +141,13 @@ const PreLaunch = () => {
                 <button
                   type="button"
                   className="cancel"
-                  onClick={() => setResponse(null)}
+                  onClick={() => setResponseParams(null)}
                 >
                   Cancel
                 </button>
               </div>
             </form>
-            {response && <StreamlitEmbed data={response} />} 
+            {responseParams && <StreamlitEmbed data={responseParams} />} 
           </div>
         </div>
       </div>
