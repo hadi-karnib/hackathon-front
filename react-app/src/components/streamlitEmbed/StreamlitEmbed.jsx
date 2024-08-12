@@ -4,7 +4,6 @@ import PropTypes from "prop-types";
 const StreamlitEmbed = ({ data }) => {
   const queryParams = new URLSearchParams(data).toString();
   const streamlitUrl = `http://localhost:8501/?${queryParams}`;
-
   return (
     <div>
       <iframe

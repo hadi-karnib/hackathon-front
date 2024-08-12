@@ -36,3 +36,15 @@
     transform: rotate(360deg);
   }
 }
+
+
+/* Inside src/App.css or src/index.css */
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+/* Inside src/App.css */
+.app {
+  font-family: 'Poppins', sans-serif;
+}
+

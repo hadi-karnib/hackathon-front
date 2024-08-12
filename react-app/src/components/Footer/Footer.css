@@ -87,7 +87,7 @@
   font-size: 14px;
   color: #cccccc;
   display: flex;
-  justify-content: center;
+  justify-content: flex;
   align-items: center;
   flex-direction: column;
   gap: 10px;
@@ -112,6 +112,7 @@
   color: #ffffff;
   text-align: center;
   margin: 10px 0;
+  align-self: flex-start;
 }
 
 /* Media Queries for Responsiveness */

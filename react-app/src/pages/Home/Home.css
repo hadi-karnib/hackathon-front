@@ -1,0 +1,232 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.homemaindiv {
+    background-image: url('../../Assets/background.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh; /* Ensure the container takes full height */
+    display: flex;
+    flex-direction: column;
+}
+
+.home {
+    flex: 1; /* Take up remaining space */
+    background-image: url('../../Assets/background.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+    overflow-y: hidden; /* Allow scrolling if needed */
+    padding: 0 50px; 
+    height: 90vh;
+    
+    
+}
+
+.content {
+    text-align: left;
+    max-width: 50%; 
+    flex: 1; 
+    margin-left: 59px;
+    margin-bottom: 100px;
+}
+
+.footer-container {
+    background-color: #1e004d;
+    background-image: url(http://localhost:3000/static/media/footerBG.291e6dc….jpeg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 20px 50px;
+    color: #ffffff;
+    text-align: center;
+    border-top: 1px solid #9c27b0;
+}
+
+.footer-bottom {
+    margin-top: 700px;
+}
+
+.content h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    font-family: 'Clash Display', sans-serif;
+}
+
+.bring-every {
+    font-weight:normal ;
+    font-size: 4rem;
+    color: #f4f9f9;
+  }
+  
+
+.content .highlight {
+    color: #bf1add; 
+    font-weight: 600;
+}
+
+.content p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.content .bold-text {
+    font-weight: bolder;
+}
+
+.buttons {
+    margin-top: 30px;
+    position: relative; 
+    z-index: 2; 
+}
+
+.buttons .undeployed, .buttons .deployed {
+    background: transparent;
+    border: 2px solid #27e2fb;
+    padding: 10px 20px; 
+    margin-right: 20px;
+    color: #27e2fb;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-radius: 50px;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box; 
+    display: inline-block; 
+    width: 200px; 
+    text-align: center; 
+}
+
+
+.buttons .undeployed:hover {
+    background-color: #27e2fb !important;
+    color: white !important; 
+    font-weight:600 ;
+  }
+  .buttons .deployed:hover {
+    background-color: #27e2fb!important; 
+    color: white !important; 
+    font-weight:600 ;
+  }
+  
+
+
+ 
+.right-shape {
+    position: absolute;
+    bottom: 20px; 
+    right: 20px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px; 
+    width: 200px; 
+    position: relative;
+}
+
+.variant {
+    position: absolute;
+    width: 150vw; 
+    height: 150vh; 
+    opacity: 0;
+    animation: breathingEffect 6s infinite; 
+    padding-top: 400px;
+    padding-right: 230px;
+    margin-bottom: 150px;
+}
+
+.variant1 {
+    animation-delay: 0s;
+}
+
+.variant2 {
+    animation-delay: 2s; 
+}
+
+.variant3 {
+    animation-delay: 4s; 
+} 
+
+@keyframes breathingEffect {
+    0% { opacity: 0; transform: scale(0.95); }
+    25% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0; transform: scale(0.95); }
+    100% { opacity: 0; transform: scale(0.95); }
+}
+
+
+@media only screen and (max-width: 844px) {
+    .home {
+      padding: 0 20px; 
+      flex-direction: column;
+      justify-content: center;
+      align-items: center; 
+    }
+  
+    .content {
+      max-width: 100%; 
+      margin-left: 0;
+      margin-bottom: 20px; 
+      text-align: center; 
+    }
+  
+    .content h1 {
+      font-size: 3rem;
+    }
+  
+    .content p {
+      font-size: 1rem;
+    }
+  
+    .buttons {
+      margin-top: 20px; 
+    }
+  
+    .buttons .undeployed, .buttons .deployed {
+      width: 100%; 
+      margin-right: 0;
+      margin-bottom: 10px; 
+    }
+  
+    /* .right-shape {
+      position: static; 
+      width: 100%; 
+      height: auto; 
+      margin-top: 20px; 
+    }
+  
+    .variant {
+      width: 90vw; 
+      height: auto;
+    } */
+  
+    
+    .buttons {
+      z-index: 100;
+    }
+  }
+  
+  @media only screen and (max-width: 390px) {
+    .content h1 {
+      font-size: 2.5rem; 
+    }
+  
+    .content p {
+      font-size: 0.9rem; 
+    }
+  
+    .buttons .undeployed, .buttons .deployed {
+      padding: 8px 16px; 
+    }
+  }
+  

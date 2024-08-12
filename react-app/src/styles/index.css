@@ -11,3 +11,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* Inside src/App.css or src/index.css */
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
