@@ -171,12 +171,16 @@ function PostLaunch() {
           </div>
         </form>
         {showResults && responseParams && (
-          <div>
-          <h2 className="result-form-heading">Here's your app insights</h2>
-          <div className="results-container">
-            <StreamlitEmbed data={responseParams} />
-          </div>
-        </div>
+         <div className="streamlit-embed-container">
+         <h2>Here Is Your App Insights</h2>
+         <div className="streamlit-embed-content">
+           <StreamlitEmbed data={responseParams} />
+         </div>
+         <div className="app-insight-text">
+         <h3>Appsight Note</h3>
+       <p>Please be aware that the insights and results provided by this application are based on the data and algorithms used, and while we strive for accuracy, they may not always reflect 100% accurate information.</p>
+     </div>
+       </div>
         )}
       </div>
     </div>
