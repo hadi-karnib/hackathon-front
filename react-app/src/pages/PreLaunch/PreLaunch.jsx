@@ -7,9 +7,9 @@ const PreLaunch = () => {
   const [formData, setFormData] = useState({
     App: '',
     Category: '',
-    Size_in_MB: 0, 
+    Size_in_MB: '', 
     Type: '',
-    Price: 0,
+    Price: '',
     Content_Rating: '',
     Genres: '',
     Last_Updated: '',
@@ -87,6 +87,8 @@ const PreLaunch = () => {
                   <input
                     type="text"
                     name="App"
+                    placeholder=" Enter name"
+                    className="form-input"
                     value={formData.App}
                     onChange={handleChange}
                   />
@@ -95,8 +97,9 @@ const PreLaunch = () => {
                     name="Category"
                     value={formData.Category}
                     onChange={handleChange}
+                    className="form-input-select"
                   >
-                    <option value="">Select Category</option>
+                    <option value="" >Choose category</option>
                     {['ART_AND_DESIGN', 'AUTO_AND_VEHICLES', 'BEAUTY',
                       'BOOKS_AND_REFERENCE', 'BUSINESS', 'COMICS', 'COMMUNICATION',
                       'DATING', 'EDUCATION', 'ENTERTAINMENT', 'EVENTS', 'FINANCE',
@@ -113,6 +116,8 @@ const PreLaunch = () => {
                     type="number"
                     name="Size_in_MB"
                     value={formData.Size_in_MB}
+                    className="form-input"
+                    placeholder=" Enter size in MB"
                     onChange={handleChange}
                   />
                   <label>Type</label>
@@ -120,8 +125,9 @@ const PreLaunch = () => {
                     name="Type"
                     value={formData.Type}
                     onChange={handleChange}
+                    className="form-input-select"
                   >
-                    <option value="">Select Type</option>
+                    <option value="">Choose Type</option>
                     {['Free', 'Paid'].map(type => (
                       <option key={type} value={type}>{type}</option>
                     ))}
@@ -131,6 +137,7 @@ const PreLaunch = () => {
                     type="date"
                     name="Last_Updated"
                     value={formData.Last_Updated}
+                    className="form-input-select"
                     onChange={handleChange}
                   />
                 </div>
@@ -140,6 +147,8 @@ const PreLaunch = () => {
                     type="number"
                     step="0.01"
                     name="Price"
+                    placeholder=" Enter price"
+                    className="form-input"
                     value={formData.Price}
                     onChange={handleChange}
                   />
@@ -147,9 +156,10 @@ const PreLaunch = () => {
                   <select
                     name="Content_Rating"
                     value={formData.Content_Rating}
+                    className="form-input-select"
                     onChange={handleChange}
                   >
-                    <option value="">Select Rating</option>
+                    <option value="">Choose Rating</option>
                     {['Everyone', 'Teen', 'Everyone 10+', 'Mature 17+',
                       'Adults only 18+', 'Unrated'].map(rating => (
                       <option key={rating} value={rating.toLowerCase()}>{rating}</option>
@@ -159,9 +169,10 @@ const PreLaunch = () => {
                   <select
                     name="Genres"
                     value={formData.Genres}
+                    className="form-input-select"
                     onChange={handleChange}
                   >
-                    <option value="">Select Genre</option>
+                    <option value="">Choose Genre</option>
                     { [
   'Art & Design', 'Art & Design;Pretend Play', 'Art & Design;Creativity',
   'Art & Design;Action & Adventure', 'Auto & Vehicles', 'Beauty',
@@ -206,6 +217,8 @@ const PreLaunch = () => {
                     type="text"
                     name="Android_Ver"
                     value={formData.Android_Ver}
+                    placeholder=" Enter android version"
+                    className="form-input"
                     onChange={handleChange}
                   />
                 </div>

@@ -47,18 +47,36 @@
     margin-right: 64px;
   }
   
-  
-.navbar .links a {
-  color: var(--link-color,#ffffff); /* Use CSS variable with default color */
-  text-decoration: none;
-  font-family: 'poppins', sans-serif;
-  transition: color 0.3s ease, text-decoration 0.3s ease;
-}
+  .navbar .links a {
+    position: relative; /* Required for the pseudo-element positioning */
+    color: var(--link-color, #ffffff); /* Use CSS variable with default color */
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+  }
   
   .navbar .links a:hover {
     color: #27E2FB; /* Light blue color */
-    text-decoration: underline;
   }
+  
+  .navbar .links a::after {
+    content: ''; /* Required for the pseudo-element */
+    position: absolute;
+    left: 0;
+    bottom: -5px; /* Adjust as needed for padding */
+    width: 100%;
+    height: 2px; /* Underline thickness */
+    background-color: #27E2FB; /* Underline color */
+    transform: scaleX(0); /* Initially hide the underline */
+    transform-origin: bottom right;
+    transition: transform 0.3s ease; /* Smooth transition */
+  }
+  
+  .navbar .links a:hover::after {
+    transform: scaleX(1); /* Show underline on hover */
+    transform-origin: bottom left;
+  }
+  
   
   
   @media (max-width: 768px) {

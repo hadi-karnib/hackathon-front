@@ -57,6 +57,7 @@
   height: 40%;
   display: flex;
   justify-content: space-around;
+  margin-bottom: 40px;
 }
 #guidance {
   background-image: url("../../../public/images/guidance.png");
@@ -103,7 +104,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  width: 100vw;
+  width: 101vw;
   height: 70vh;
 }
 .our-story-text {

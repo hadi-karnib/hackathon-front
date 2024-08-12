@@ -13,19 +13,15 @@ const Footer = () => {
             Home
           </a>
           <a href="/pre-launch" className="nav-link">
-            Pre Launch
+            Pre Trial
           </a>
           <a href="/post-launch" className="nav-link">
-            Post Launch
+            Post Trial
           </a>
           <a href="/our-story" className="nav-link">
             Our Story
           </a>
         </nav>
-        <div className="button-container">
-          <button className="deployed-button">Deployed</button>
-          <button className="undeployed-button">Undeployed</button>
-        </div>
       </div>
       <div className="footer-bottom">
         <p className="copyright-text">

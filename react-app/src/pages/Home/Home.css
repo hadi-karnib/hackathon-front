@@ -63,6 +63,7 @@ html, body {
 }
 
 .bring-every {
+    font-family: 'Clash Display', sans-serif;
     font-weight:normal ;
     font-size: 4rem;
     color: #f4f9f9;
@@ -78,6 +79,7 @@ html, body {
     font-size: 1.1rem;
     margin-bottom: 20px;
     font-family: 'Poppins', sans-serif;
+    width: 70%;
 }
 
 .content .bold-text {
@@ -85,7 +87,7 @@ html, body {
 }
 
 .buttons {
-    margin-top: 30px;
+    padding-top: 30px;
     position: relative; 
     z-index: 2; 
 }
@@ -93,18 +95,19 @@ html, body {
 .buttons .undeployed, .buttons .deployed {
     background: transparent;
     border: 2px solid #27e2fb;
+    font-family: 'Clash display', sans-serif;
     padding: 10px 20px; 
     margin-right: 20px;
     color: #27e2fb;
-    font-size: 1rem;
+    font-size: 1.2rem;
     cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease;
     border-radius: 50px;
-    font-family: 'Poppins', sans-serif;
     box-sizing: border-box; 
     display: inline-block; 
     width: 200px; 
     text-align: center; 
+    
 }
 
 
