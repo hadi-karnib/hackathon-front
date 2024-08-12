@@ -53,7 +53,7 @@ function App() {
           <Route path="/our-story" element={<OurStory />} />
         </Routes>
       </Router>
-      <Footer />
+      <Footer/>
     </>
   );
 }

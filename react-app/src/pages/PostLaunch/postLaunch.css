@@ -71,8 +71,8 @@
     padding-bottom: 10px;
     color: #3D10F9;
 }
-.post-launch-form-input-placeholder {
-    color: black;
+.post-launch-form-input::placeholder {
+    font-style: italic;
 }
 
 .post-launch-form-button {
