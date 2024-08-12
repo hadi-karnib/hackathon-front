@@ -26,7 +26,6 @@
     padding: 20px;
     box-sizing: border-box;
 }
-
 .title-section {
     text-align: center;
     z-index: 2;
@@ -35,6 +34,7 @@
     letter-spacing: 0.1rem;
     padding: 10px;
     box-sizing: border-box;
+    
 }
 
 .title-section h2 {
@@ -252,7 +252,7 @@ select {
     font-size: 2rem;
 }
 
-.streamlit-embed-content, .app-insight-text{
+.streamlit-embed-content, .app-insight-text {
     width: 100%;
     max-width: 1000px;
     background: rgba(255, 255, 255, 0.85);
@@ -266,7 +266,9 @@ select {
     justify-content: center;
     flex-direction: column;
     align-items: center;
+
 }
+
 
 .app-insight-text h3{
     color: #bf1add;
@@ -324,3 +326,12 @@ select {
         font-size: 1rem;
     }
 }
+.form-input::placeholder {
+    font-style: italic;
+}
+.form-input-select{
+    font-style: italic;
+    font-weight: normal;
+    color: gray;   
+}
+

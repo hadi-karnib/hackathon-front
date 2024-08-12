@@ -88,7 +88,7 @@ function PostLaunch() {
           </div>
           <div>
             <label className="post-launch-form-label" htmlFor="Last_Updated">Release Date</label>
-            <input type="date" id="release-date" name="Last_Updated" className="post-launch-form-input" value={formData.Last_Updated} onChange={handleChange} />
+            <input type="date" id="release-date" name="Last_Updated" className="post-launch-form-select" value={formData.Last_Updated} onChange={handleChange} />
           </div>
           <div>
             <label className="post-launch-form-label" htmlFor="Size_in_MB">Size</label>
@@ -171,10 +171,12 @@ function PostLaunch() {
           </div>
         </form>
         {showResults && responseParams && (
+          <div>
+          <h2 className="result-form-heading">Here's your app insights</h2>
           <div className="results-container">
-            <h2 className="post-launch-form-heading">Here's your app insights</h2>
             <StreamlitEmbed data={responseParams} />
           </div>
+        </div>
         )}
       </div>
     </div>

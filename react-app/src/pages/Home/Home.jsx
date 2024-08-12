@@ -25,17 +25,17 @@ function Home() {
           <p>Welcome to AppSight, your AI-driven tool for predicting app success! We provide data-driven insights to help developers launch with confidence. Join us to redefine app development with accurate predictions and powerful insights.</p>
           <p className="bold-text">Pick our pre-trial model to predict success or post-trial to analyze performance and reviews</p>
           <div className="buttons">
+          <button 
+              className="undeployed" 
+              onClick={() => navigate('/pre-launch')}
+            >
+              Pre Trial
+            </button>
             <button 
               className="deployed" 
               onClick={() => navigate('/post-launch')}
             >
-              Deployed
-            </button>
-            <button 
-              className="undeployed" 
-              onClick={() => navigate('/pre-launch')}
-            >
-              Undeployed
+              Post Trial
             </button>
           </div>
         </div>
