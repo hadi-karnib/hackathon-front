@@ -3,7 +3,7 @@ import './ourstory.css'
 import Navbar from '../../components/navbar/Navbar';
 function OurStory() {
   return(
-    <>
+    <div className='ourStorymaindiv'>
     <Navbar backgroundColor={"#FFF9F9"} linkColor={"black"} />
     <div className="first-part">
       <div className="main-text">
@@ -52,7 +52,7 @@ function OurStory() {
         <p id='why-us-text'>At AppSight, we blend advanced AI with deep app expertise to offer precise predictions and actionable insights. Our models help you strategize effectively before launch or refine your approach with real-world data post-trial. With our commitment to cutting-edge technology and tailored solutions, you can trust us to drive your app’s success with accuracy and reliability.</p>
       </div>
     </div>
-    </>
+    </div>
   );
 }
 
