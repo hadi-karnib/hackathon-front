@@ -89,8 +89,17 @@ if params:
             category_proportion = category_info['proportion']
 
             # Create the first figure (installation category)
+            # Create the first figure (installation category)
             fig1 = go.Figure()
 
+            fig1.add_trace(go.Bar(
+                x=[category],
+                y=[category_proportion[0] * 100],  # Convert proportion to percentage
+                marker_color=category_color,
+                text=[f'{category_proportion[0] * 100:.1f}%'],
+                textposition='auto',  # Position the text inside the bar
+                textfont_color='black'  # Change text color to black
+            ))
             fig1.add_trace(go.Bar(
                 x=[category],
                 y=[category_proportion[0] * 100],  # Convert proportion to percentage
@@ -105,11 +114,17 @@ if params:
                 height=500,
                 title='Installation Category',
                 title_font_color='black',
+                title_font_color='black',
                 xaxis_title='Category',
+                xaxis_title_font_color='black',
                 xaxis_title_font_color='black',
                 yaxis_title='Percentage',
                 yaxis_title_font_color='black',
+                yaxis_title_font_color='black',
                 xaxis=dict(
+                    tickvals=[category],
+                    ticktext=[category],
+                    tickfont_color='black'
                     tickvals=[category],
                     ticktext=[category],
                     tickfont_color='black'
@@ -119,6 +134,7 @@ if params:
                     tickprefix='',
                     ticksuffix='%',
                     tickfont_color='black'
+                    tickfont_color='black'
                 ),
                 margin=dict(l=20, r=20, t=40, b=20),
                 plot_bgcolor='white',  # White background for the plot area
@@ -127,6 +143,8 @@ if params:
 
            # Create the second figure (number of installations)
             fig2 = go.Figure()
+
+            # Add an empty bar to show the range
             fig2.add_trace(go.Bar(
                 x=['Installations'],  # Single category for the bar chart
                 y=[installation_number],  # Display the actual number of installations
@@ -140,10 +158,16 @@ if params:
                 height=500,
                 title='Number of Installations',
                 title_font_color='black',
+                title_font_color='black',
                 xaxis_title='',  # No title for x-axis
                 yaxis_title='Installations',
                 yaxis_title_font_color='black',
+                yaxis_title='Installations',
+                yaxis_title_font_color='black',
                 xaxis=dict(
+                    tickvals=['Installations'],
+                    ticktext=[''],
+                    tickfont_color='black'
                     tickvals=['Installations'],
                     ticktext=[''],
                     tickfont_color='black'
@@ -159,6 +183,7 @@ if params:
                 paper_bgcolor='white'  # White background for the entire figure
             )
 
+
             # Display the charts side by side
             col1, col2 = st.columns(2)
             with col1:
@@ -167,6 +192,7 @@ if params:
                 st.plotly_chart(fig2, use_container_width=True)
 
         else:
+            st.write("Installation number not found in URL parameters")
             st.write("Installation number not found in URL parameters")
 
     except ValueError as e:
