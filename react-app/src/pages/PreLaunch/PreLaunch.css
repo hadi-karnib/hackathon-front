@@ -37,6 +37,14 @@
     box-sizing: border-box;
 }
 
+.title-section h2 {
+    font-size: 2rem;
+}
+
+.title-section p {
+    font-size: 1.2rem;
+}
+
 .market-insights-content {
     display: flex;
     justify-content: space-between;
@@ -91,11 +99,17 @@
     width: 48%;
 }
 
+.form-group input, .form-group select {
+    border-radius: 10px;
+}
+
 label {
     color: white;
     font-size: 0.9rem;
     margin-bottom: 5px;
     font-family: "Poppins", sans-serif;
+    font-weight: bold;
+    margin-top: 5px;
 }
 
 input,
@@ -136,18 +150,6 @@ select {
     display: flex;
     justify-content: flex-start;
     width: 100%;
-}
-
-.title-section h2 {
-    font-size: 2rem;
-}
-
-.title-section p {
-    font-size: 1.2rem;
-}
-
-.form-group input, .form-group select {
-    border-radius: 10px;
 }
 
 @media (max-width: 768px) {
@@ -224,12 +226,101 @@ select {
     }
 }
 
-label {
-    font-weight: bold;
-    margin-bottom: -5px;
-    margin-top: 5px;
-}
-
 ::-webkit-scrollbar {
     display: none;
+}
+.streamlit-embed-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url("background2.jpg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.streamlit-embed-container h2{
+    color: #bf1add;
+    font-family: "Clash Display", sans-serif;
+    letter-spacing: 0.1rem;
+    text-align: center;
+    font-size: 2rem;
+}
+
+.streamlit-embed-content, .app-insight-text{
+    width: 100%;
+    max-width: 1000px;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); 
+    padding: 20px;
+    box-sizing: border-box;
+    overflow: hidden;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.app-insight-text h3{
+    color: #bf1add;
+    font-family: "Clash Display", sans-serif;
+    letter-spacing: 0.1rem;
+    text-align: center;
+    font-size: 1.6rem;
+}
+
+.app-insight-text p{
+    width: 70%;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+.streamlit-iframe {
+    width: 100%;
+    height: 800px;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+}
+
+.streamlit-embed-text {
+    color: white;
+    font-size: 1.4rem;
+    font-weight: 600;
+    font-family: "Poppins", sans-serif;
+    margin-top: 20px;
+    text-align: center;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4); 
+}
+
+@media (max-width: 768px) {
+    .streamlit-iframe {
+        height: 600px; 
+    }
+    
+    .streamlit-embed-container {
+        padding: 30px;
+    }
+
+    .streamlit-embed-text {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .streamlit-iframe {
+        height: 400px; 
+    }
+
+    .streamlit-embed-text {
+        font-size: 1rem;
+    }
 }

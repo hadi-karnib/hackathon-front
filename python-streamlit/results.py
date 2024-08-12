@@ -54,17 +54,11 @@ params = get_url_params()
 
 # Display raw data for debugging
 if params:
-    #st.write("Raw URL Parameters:")
-    #st.write(params)  # Display raw query parameters
-
     try:
         # Extract parameters
-        category = params.get('installation_category', [''])
-        installation_number_str = params.get('installation_number', [''])
-        
-        #st.write(f"Category: {category}")
-        #st.write(f"Installation Number (raw): {installation_number_str}")
-        
+        category = params.get('installation_category', [''])[0] 
+        installation_number_str = params.get('installation_number', [''])[0]  
+
         if installation_number_str:
             try:
                 installation_number = int(installation_number_str)
@@ -77,7 +71,7 @@ if params:
                 'no': {'color': '#e5e5e5', 'proportion': [0, 1]},
                 'Very low': {'color': '#27e2fb', 'proportion': [0.05, 0.95]},
                 'Low': {'color': '#3d10f9', 'proportion': [0.25, 0.75]},
-                'Moderate': {'color': '#bf1add', 'proportion': [0.5, 0.5]},
+                'Moderate': {'color': '#bf1add', 'proportion': [0.5, 5]},
                 'More than Moderate': {'color': '#ffcc00', 'proportion': [0.75, 0.25]},
                 'High': {'color': '#ff0000', 'proportion': [0.85, 0.15]},
                 'Very High': {'color': '#ff8800', 'proportion': [0.95, 0.05]},
