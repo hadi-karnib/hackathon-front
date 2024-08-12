@@ -174,7 +174,7 @@ if params:
                     tickfont_color='black'
                 ),
                 yaxis=dict(
-                    range=[0, 10000],  # Full range of the bar from 0 to 1 million
+                    range=[0, 100],  
                     tickprefix='',
                     ticksuffix='',
                     tickfont_color='black'

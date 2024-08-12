@@ -1,26 +1,40 @@
-# Use an official Python runtime as a parent image
-FROM python:3.12.4-slim
+# Stage 1: Python Streamlit application
+FROM python:3.9-slim as python-streamlit
 
-# Set the working directory to /app
-WORKDIR /app
+# Set working directory
+WORKDIR /app/python-streamlit
 
-# Copy the current directory contents into the container at /app
-COPY . /app
+# Copy python-streamlit directory contents into the container
+COPY python-streamlit/ .
 
 # Install Python dependencies
-RUN pip install --no-cache-dir -r python-streamlit/requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install streamlit
 
-# Install Node.js dependencies
+# Command to run the Streamlit app
+CMD ["streamlit", "run", "results.py"]
+
+# Stage 2: React application
+FROM node:14-alpine as react-app
+
+# Set working directory
 WORKDIR /app/react-app
+
+# Copy react-app directory contents into the container
+COPY react-app/ .
+
+# Install npm dependencies
 RUN npm install
 
-# Expose the port Streamlit will run on and the port for React (assuming React runs on 3000)
-EXPOSE 8501
-EXPOSE 3000
+# Command to run the React app
+CMD ["npm", "start"]
 
-# Use a script to start both Streamlit and React
-WORKDIR /app
-COPY start.sh /app/start.sh
-RUN chmod +x /app/start.sh
+# Final Stage: Combine both stages
+FROM node:14-alpine
 
-CMD ["./start.sh"]
+# Copy both applications into the final container
+COPY --from=python-streamlit /app/python-streamlit /app/python-streamlit
+COPY --from=react-app /app/react-app /app/react-app
+
+# Command to run both applications simultaneously
+CMD ["sh", "-c", "cd /app/python-streamlit && streamlit run results.py & cd /app/react-app && npm start"]
