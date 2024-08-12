@@ -2,7 +2,6 @@ html, body {
     margin: 0;
     padding: 0;
     height: 100%;
-    /* overflow: hidden;  */
     box-sizing: border-box;
 }
 
@@ -10,21 +9,26 @@ html, body {
     background-image: url('../../Assets/background.jpg');
     background-size: cover;
     background-position: center;
+    min-height: 100vh; /* Ensure the container takes full height */
+    display: flex;
+    flex-direction: column;
 }
 
 .home {
+    flex: 1; /* Take up remaining space */
     background-image: url('../../Assets/background.jpg');
     background-size: cover;
     background-position: center;
-    height: 100vh;
-    margin: 0;
     display: flex;
-    justify-content: space-between; 
+    justify-content: space-between;
     align-items: center;
     color: white;
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
-    overflow-y: scroll;
+    overflow-y: hidden; /* Allow scrolling if needed */
     padding: 0 50px; 
+    height: 90vh;
+    
+    
 }
 
 .content {
@@ -33,6 +37,22 @@ html, body {
     flex: 1; 
     margin-left: 59px;
     margin-bottom: 100px;
+}
+
+.footer-container {
+    background-color: #1e004d;
+    background-image: url(http://localhost:3000/static/media/footerBG.291e6dc….jpeg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 20px 50px;
+    color: #ffffff;
+    text-align: center;
+    border-top: 1px solid #9c27b0;
+}
+
+.footer-bottom {
+    margin-top: 700px;
 }
 
 .content h1 {
@@ -120,8 +140,9 @@ html, body {
     height: 150vh; 
     opacity: 0;
     animation: breathingEffect 6s infinite; 
-    padding-top: 450px;
+    padding-top: 400px;
     padding-right: 230px;
+    margin-bottom: 150px;
 }
 
 .variant1 {

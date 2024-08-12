@@ -27,13 +27,13 @@ function Home() {
           <div className="buttons">
             <button 
               className="deployed" 
-              onClick={() => navigate('/postlaunch')}
+              onClick={() => navigate('/post-launch')}
             >
               Deployed
             </button>
             <button 
               className="undeployed" 
-              onClick={() => navigate('/prelaunch')}
+              onClick={() => navigate('/pre-launch')}
             >
               Undeployed
             </button>
